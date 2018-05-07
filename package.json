@@ -1,0 +1,12 @@
+{
+  "name": "simple-reduce",
+  "version": "0.1.0",
+  "dependencies": {
+    "rollup": "^0.57.1",
+    "rollup-plugin-cleanup": "^2.0.0"
+  },
+  "devDependencies": {
+    "shelljs": "0.8.1",
+    "coffee-require": "0.0.4"
+  }
+}
