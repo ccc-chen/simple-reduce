@@ -3,7 +3,7 @@ import 'shelljs/make'
 
 object_key = (object) =>
   (
-    Object.keys header
+    Object.keys object
   )
   .reduce (r, c, i) =>
     [
@@ -11,3 +11,21 @@ object_key = (object) =>
       "#{c}"
     ]
   , []
+
+object_val = (object) =>
+  (
+    Object.keys object
+  )
+  .reduce (r, c, i) =>
+    [
+      r...
+      object["#{c}"]
+    ]
+  , []
+object = 
+  name: '1'  
+  age: '2'
+
+a = object_val object
+console.log a
+
