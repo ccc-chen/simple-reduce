@@ -22,10 +22,10 @@ object_val = (object) =>
       object["#{c}"]
     ]
   , []
-object = 
+object =
   name: '1'  
   age: '2'
 
-a = object_val object
+a = object_key object
 console.log a
 
