@@ -1,4 +1,4 @@
-# import dd from 'ddeyes'
+import dd from 'ddeyes'
 import del from 'del'
 
 import gulp from 'gulp'
@@ -11,7 +11,6 @@ import {
   babel
 } from 'cfx.rollup-plugin-coffee2'
 
-import image from 'rollup-plugin-image'
 import cleanup from 'rollup-plugin-cleanup'
 
 gulp.task 'clean', (cb) =>
@@ -26,7 +25,6 @@ gulp.task 'buildEs', =>
       coffee2
         bare: true
         sourceMap: true
-      image()
       cleanup()
     ]
   , 'es'
@@ -39,7 +37,6 @@ gulp.task 'buildCjs', =>
   .pipe rollup
     plugins: [
       babel()
-      image()
       cleanup()
     ]
   , 'cjs'
