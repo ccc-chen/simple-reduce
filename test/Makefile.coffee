@@ -1,32 +1,46 @@
 # import dd from 'ddeyes'
 import 'shelljs/make'
 
-object_key = (object) =>
-  (
-    Object.keys object
-  )
-  .reduce (r, c, i) =>
-    [
-      r...
-      "#{c}"
-    ]
-  , []
+house = [
+    landlordId: '555'
+    city: '上海'
+  ,
+    landlordId: '111'
+    city: '湖北'
+  ,
+    landlordId: '222'
+    city: '四川'
+  ,
+    landlordId: '333'
+    city: '重庆'
+  ,
+    landlordId: '444'
+    city: '北京'
+]
 
-object_val = (object) =>
-  (
-    Object.keys object
-  )
-  .reduce (r, c, i) =>
-    [
-      r...
-      object["#{c}"]
-    ]
-  , []
+landlord = [
+    objectId: '111'
+    name: '张三'
+  ,
+    objectId: '222'
+    name: '李四'
+]
 
-object =
-  name: '1'
-  age: '2'
+dataAll = []
+houseDataAll = []
+house.forEach (housedata) =>
+  landlord.forEach (landlorddata) =>
+    if housedata.landlordId is landlorddata.objectId
+      console.log housedata
+      data = {
+        housedata
+        landlorddata
+      }
+      dataAll.push data
+    else
+      data = {
+        housedata
+      }
+      houseDataAll.push data
 
-a = object_val object
-console.log a
-
+console.log houseDataAll

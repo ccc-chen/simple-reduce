@@ -5,10 +5,10 @@ docker:
 		--name ${pjName} \
 		--rm \
 		-ti \
-		-p 3080:80 \
-		-p 3088:8080 \
-		-p 3030:3000 \
-		-p 3000:8000 \
+		-p 4080:90 \
+		-p 4088:9080 \
+		-p 4030:9000 \
+		-p 4000:9000 \
 		-v $$(pwd):/root/${pjName} \
 		mooxe/node \
 		/bin/bash
